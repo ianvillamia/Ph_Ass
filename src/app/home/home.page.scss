@@ -15,9 +15,15 @@ ion-input {
 .icons {
     display: flex;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
 
     ion-icon {
         font-size: 125%;
+        color: #FF0700;
+        cursor: pointer;
+
+        &:hover {
+            color: rgb(187, 12, 6);
+        }
     }
 }
