@@ -8,9 +8,10 @@
 
 <ion-content>
   <div class="footer">
-      <ion-label class="icons">
-          <ion-icon class="mic" name="mic" (click)="startListening()"></ion-icon>
-      </ion-label>
+    <ion-button (click)="listen()" color="danger"><ion-label class="icons">
+        <ion-icon class="mic" name="mic" color="light" ></ion-icon>
+    </ion-label></ion-button>
+   
           
         <ion-input placeholder="Enter a message.."></ion-input>
     
