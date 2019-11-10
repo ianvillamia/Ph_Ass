@@ -95,6 +95,9 @@ export class HomePage implements OnInit{
     const txt =this.text.toLowerCase();
     this.user(this.text);
     //do bot reply
+    if(txt==""){
+      this.bot("Im sorry I didn't quite catch that");
+    }
     if(txt =="what plans can i avail" ){
        this.bot("Okay but first let me get your age..");
         

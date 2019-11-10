@@ -13,7 +13,8 @@
     </div>
   </div> -->
 
-  <div class="body" scrollY="true" >
+    <div class="body" scrollY="true" >
+        <div class="wrapper">
     <div   *ngFor="let msg of messages" [ngClass]="{question: msg.sender == 'me', answer: msg.sender == 'bot'}">
       <img *ngIf="msg.sender == 'bot'" src="../../assets/icon/bot.png"/>
       <img *ngIf="msg.sender == 'me'" src="../../assets/icon/user.png" class="user"/>
@@ -24,6 +25,8 @@
     
     </div>
   </div>
+</div>
+
 
   <div class="footer">
     <ion-button (click)="listen()" color="danger"><ion-label class="icons">
