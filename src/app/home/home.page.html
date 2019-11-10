@@ -1,21 +1,39 @@
 <ion-header>
   <ion-toolbar color="danger">
     <ion-title>
-      CHAT BOT
+    PHILAM LIFE ASSISTANT
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <!-- <div class="body">
+    <div *ngFor="let msg of messages" [ngClass]="{question: msg.sender == 'me', answer: msg.sender == 'bot'}>
+      {{msg.message}}
+    </div>
+  </div> -->
+
+  <div class="body" scrollY="true" >
+    <div   *ngFor="let msg of messages" [ngClass]="{question: msg.sender == 'me', answer: msg.sender == 'bot'}">
+      <img *ngIf="msg.sender == 'bot'" src="../../assets/icon/bot.png"/>
+      <img *ngIf="msg.sender == 'me'" src="../../assets/icon/user.png" class="user"/>
+    
+     <div class="msg" >
+        {{msg.message}}
+    </div>
+    
+    </div>
+  </div>
+
   <div class="footer">
     <ion-button (click)="listen()" color="danger"><ion-label class="icons">
         <ion-icon class="mic" name="mic" color="light" ></ion-icon>
     </ion-label></ion-button>
    
           
-        <ion-input placeholder="Enter a message.."></ion-input>
+        <ion-input [(ngModel)]="text" clearInput="true" placeholder="Enter a message.."></ion-input>
     
-      <ion-label class="icons">
+      <ion-label class="icons" (click)="send()">
         <ion-icon class="send" name="send"></ion-icon>
       </ion-label>
   </div>
